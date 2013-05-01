@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+  <h1>test</h1>
+
+  <div class="omniture-custom-links">
+    <a href="" class="stuff" data-config='{"name":"link1","type":"o","dev":true}'>link1</a>
+    <a href="" class="stuff" data-config='{"name":"link2","type":"o","dev":true}'>link2</a>
+  </div>
+
+  <script src="lib/familysearch-s_code.js"></script>
+  <script src="build/build.js"></script>
+  <script> 
+  
+    var els = document.querySelectorAll('.stuff');
+    var OmnitureCustomLink = require('OmnitureCustomLink');
+    for (var i = 0; i < els.length; i++) {
+      var config = JSON.parse(els[i].dataset.config);
+      OmnitureCustomLink(els[i],config);
+    };
+    
+  </script>
+
+</body>
+</html>
